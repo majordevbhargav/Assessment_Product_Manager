@@ -1,15 +1,12 @@
 import streamlit as st
 import pdfplumber
 import requests
-import os
 from openai import OpenAI
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 # OpenAI client
 client = OpenAI(api_key=OPENAI_API_KEY)
