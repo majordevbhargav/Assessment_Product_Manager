@@ -1,121 +1,103 @@
-# GEO Assignment Submission
+# GEO Strategy & TruthLayer
 
-## Overview
+An assessment project combining a GEO product strategy and monetization proposal with **TruthLayer**, an AI-assisted fact-checking application for PDF documents.
 
-This project contains solutions for both parts of the assessment:
+## Project Overview
 
-### Part 1
-GEO (Generative Engine Optimization) Product Strategy & Monetization Roadmap Presentation.
+The repository contains two connected assessment deliverables:
 
-### Part 2
-TruthLayer — AI-powered Fact-Checking Web Application.
+1. **GEO Product Strategy**: a product strategy, analytics, and monetization roadmap for Generative Engine Optimization.
+2. **TruthLayer**: a Streamlit application that extracts factual claims from uploaded PDFs, verifies them using live web search, and produces evidence-backed verdicts.
 
-The application extracts factual claims from uploaded PDF documents, verifies them using live web search, and flags claims as:
-- VERIFIED
-- INACCURATE
-- FALSE
-- OUTDATED
+## TruthLayer Features
 
----
+- PDF upload and parsing
+- AI-assisted claim extraction
+- Live web verification through Tavily
+- Claim classification as verified, inaccurate, false, or outdated
+- Evidence-oriented verification workflow
+- Streamlit interface
 
-# Part 1: GEO Product Strategy
+## GEO Strategy Features
 
-## Features
 - GEO analytics concept
 - AI search visibility tracking
 - Competitor comparison
 - Monetization roadmap
-- Short-term and long-term strategy
-- Automatic PPT generation using Python
+- Short- and long-term product strategy
+- Automated presentation generation
 
-## PPT Generator
+## Tech Stack
 
-Run:
+- Python
+- Streamlit
+- OpenAI API
+- Tavily Search API
+- pdfplumber
+- python-pptx
 
-```bash
-python create_ppt.py
-Generated file:
+## Project Structure
 
-GEO_Product_Strategy.pptx
-Part 2: TruthLayer Fact-Checking Agent
-Features
-PDF Upload
-Claim Extraction using OpenAI
-Live Web Verification using Tavily Search
-AI-based Fact Validation
-Streamlit Frontend
-Deployment Ready
-Tech Stack
-Frontend
-Streamlit
-Backend
-Python
-AI Models
-OpenAI GPT-4.1 Mini
-Web Search
-Tavily API
-PDF Parsing
-pdfplumber
-Project Structure
+```text
 Assignment/
-│
 ├── app.py
 ├── create_ppt.py
 ├── requirements.txt
 ├── .gitignore
 ├── README.md
-├── GEO_Product_Strategy.pptx
-└── .env
-Installation
-Clone Repository
-git clone <your-repository-url>
-Install Dependencies
+└── GEO_Product_Strategy.pptx
+```
+
+## Local Setup
+
+```bash
+git clone https://github.com/majordevbhargav/Assessment_Product_Manager.git
+cd Assessment_Product_Manager
 pip install -r requirements.txt
-Environment Variables
+```
 
-Create a .env file:
+Create a local `.env` file or configure the required secrets through your deployment platform:
 
+```env
 OPENAI_API_KEY=your_openai_api_key
 TAVILY_API_KEY=your_tavily_api_key
-Run Locally
+```
+
+Run the fact-checking application:
+
+```bash
 python -m streamlit run app.py
+```
 
-App runs at:
+Generate the presentation:
 
-http://localhost:8501
-Streamlit Cloud Deployment
+```bash
+python create_ppt.py
+```
 
-For deployment:
+## Verification Workflow
 
-Push project to GitHub
-Connect repository to Streamlit Cloud
-Add secrets in Streamlit Cloud:
-OPENAI_API_KEY="your_openai_key"
-TAVILY_API_KEY="your_tavily_key"
-Deploy app
-Evaluation Workflow
-Upload PDF
-Extract claims
-Search live web
-Verify claims
-Generate verdicts with evidence
-Example Verdicts
-VERIFIED
-FALSE
-OUTDATED
-INACCURATE
-Future Improvements
-Multi-agent verification pipeline
-Citation confidence scoring
-OCR support for scanned PDFs
-Source ranking system
-Exportable verification reports
-Batch document processing
-Deployment Link
-https://assessmentappuctmanager-u7m6unps4imlwnzy2prvm3.streamlit.app/
-GitHub Repository
-https://github.com/majordevbhargav/Assessment_Product_Manager/
-Demo Video
-https://drive.google.com/file/d/1qHEp7_xFB5z3MkxSDIQLyMiOizACGrtQ/view?usp=sharing
-Author
-Dev Bhargav
+```text
+PDF
+ ↓
+Claim Extraction
+ ↓
+Web Search
+ ↓
+Evidence Collection
+ ↓
+AI Validation
+ ↓
+Verdict + Evidence
+```
+
+## Limitations
+
+Fact-checking results depend on the quality and availability of external sources and model interpretation. Results should be reviewed by a human before being treated as authoritative.
+
+## Author
+
+**Dev Bhargav**
+
+- GitHub: https://github.com/majordevbhargav
+- LinkedIn: https://www.linkedin.com/in/devbhargav100
